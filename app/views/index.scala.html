@@ -1,0 +1,15 @@
+@(message: String)
+
+    @message
+    @main("Welcome to Play") {
+
+        @helper.form(action = routes.EmployeeController.upload, 'enctype -> "multipart/form-data") {
+            <input type="file" name="picture" accept="image/*">
+
+            <p>
+                <input type="submit">
+            </p>
+        }
+
+
+    }

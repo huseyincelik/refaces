@@ -1,0 +1,22 @@
+@(employeeForm: Form[Employee])(implicit flash: Flash, lang: Lang)
+@import views.html.helper.twitterBootstrap._
+
+@main("Yeni üye") {
+    <h2>Çalışan formu</h2>
+
+    @helper.form(action = routes.EmployeeController.save, 'enctype -> "multipart/form-data") {
+        <fieldset>
+            <legend>
+                Detaylar
+            </legend>
+            @helper.inputText(employeeForm("username"), args = '_label -> "Kullanıcı Adı")
+            @helper.inputText(employeeForm("firstName"), args = '_label -> "Ad")
+            @helper.inputText(employeeForm("lastName"), args = '_label -> "Soyad")
+            @helper.inputText(employeeForm("image"), args = '_label -> "Resim URL'i")
+        </fieldset>
+        <p>
+            <input type="submit" class="btn-primary" value='kaydet'>
+        </p>
+    }
+
+}

@@ -1,0 +1,16 @@
+@(employee: Employee)(implicit flash: Flash)
+@main("Kullanıcı Detayları") {
+    <dl class="dl-horizontal">
+        <dt>Kullanıcı Adı:</dt>
+        <dd>@employee.username</dd>
+
+        <dt>Ad:</dt>
+        <dd>@employee.firstName</dd>
+
+        <dt>Soyad:</dt>
+        <dd>@employee.lastName</dd>
+
+        <dt>Resim:</dt>
+        <dd>@employee.picturePath</dd>
+    </dl>
+}

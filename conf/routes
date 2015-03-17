@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET         /                        controllers.EmployeeController.list
+GET         /uyeler                  controllers.EmployeeController.list
+POST        /upload                  controllers.EmployeeController.upload
+POST        /yeniKayit               controllers.EmployeeController.save
+GET         /uye/yeni                controllers.EmployeeController.newEmployee
+GET         /uyeler/:username        controllers.EmployeeController.show(username)
+GET         /assets/*file            controllers.Assets.at(path="/public", file)
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file            controllers.Assets.at(path="/public", file)
